@@ -1,0 +1,61 @@
+{
+  "as_of": "2026-07-01",
+  "notes": "Congressional and policy figures require periodic manual updates as bills move through Congress; dollar amounts are not reliably machine-readable from bill text. Scenario adjustments below are illustrative, user-adjustable assumptions about geopolitical/economic conditions, not sourced figures. V2 adds a CBO current-law baseline entry, which is already denominated in outlays (like the app's target series) rather than budget authority, so it doesn't have the appropriation-to-outlay timing mismatch that a discretionary/mandatory appropriations figure has.",
+  "appropriations": [
+    {
+      "fiscal_year": 2026,
+      "stage": "enacted",
+      "discretionary_billions": 838.7,
+      "mandatory_billions": 150.0,
+      "label": "FY2026 enacted Defense Appropriations Act + reconciliation defense funding",
+      "source": "https://www.appropriations.senate.gov/news/majority/congress-approves-fy-2026-defense-appropriations-bill",
+      "note": "The $150B reconciliation figure (P.L. 119-21, 2025) is technically available FY2025-FY2029; commonly summed with the FY2026 appropriations act by press coverage as an approximate $1T FY2026 total. Treat as approximate. This is budget authority, not outlays."
+    },
+    {
+      "fiscal_year": 2026,
+      "stage": "cbo_baseline",
+      "outlay_billions": 885.0,
+      "label": "CBO February 2026 current-law baseline (National Defense outlays, function 050)",
+      "source": "https://www.cbo.gov/publication/61882",
+      "note": "Reported via secondary coverage of CBO's February 2026 Budget and Economic Outlook; already denominated in outlays, so directly comparable to this app's target series. The enacted appropriations figure above still wins for FY2026 since it has a higher legislative-stage weight, but this entry anchors FY2027+ growth via the inflation-based baseline assumption below."
+    },
+    {
+      "fiscal_year": 2027,
+      "stage": "cbo_baseline",
+      "outlay_billions": 907.1,
+      "label": "CBO baseline estimate (National Defense outlays, grown at CBO's projected ~2.5% near-term inflation rate)",
+      "source": "https://www.cbo.gov/publication/61882",
+      "note": "CBO's standard baseline convention extends discretionary spending at the rate of inflation absent new caps or legislation. CBO's Feb 2026 outlook did not have a separately reported FY2027 National Defense dollar figure available in this session, so this is derived from the FY2026 CBO baseline ($885.0B) grown by CBO's published near-term PCE inflation projection (~2.5%). Treat as an approximation, not a directly reported CBO figure."
+    },
+    {
+      "fiscal_year": 2028,
+      "stage": "cbo_baseline",
+      "outlay_billions": 927.6,
+      "label": "CBO baseline estimate (National Defense outlays, grown at CBO's projected ~2.3% inflation rate)",
+      "source": "https://www.cbo.gov/publication/61882",
+      "note": "Derived the same way as the FY2027 CBO baseline entry above (FY2027 estimate grown by ~2.3%, CBO's published inflation glide path toward 2% by 2030). Treat as an approximation."
+    },
+    {
+      "fiscal_year": 2027,
+      "stage": "house_passed",
+      "discretionary_billions": 1072.0,
+      "mandatory_billions": null,
+      "label": "House-passed FY2027 Defense Appropriations Act",
+      "source": "https://appropriations.house.gov/news/press-releases/committee-approves-fy27-defense-appropriations-act"
+    },
+    {
+      "fiscal_year": 2027,
+      "stage": "requested",
+      "discretionary_billions": 1150.0,
+      "mandatory_billions": 350.0,
+      "label": "President's FY2027 budget request (Department of War)",
+      "source": "https://www.whitehouse.gov/wp-content/uploads/2026/04/fiscal-year-2027-topline-fact-sheet.pdf"
+    }
+  ],
+  "bill_tracking": [],
+  "scenarios": {
+    "baseline": 0.0,
+    "elevated_tension": 0.02,
+    "de_escalation": -0.015
+  }
+}
